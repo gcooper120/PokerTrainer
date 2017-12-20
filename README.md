@@ -1,4 +1,4 @@
-I think these are all the classes we will need to get this shit off the ground. They're all pretty self explanatory and most of it is trivial coding.
+pI think these are all the classes we will need to get this shit off the ground. They're all pretty self explanatory and most of it is trivial coding.
 
 For the first part of this project, I want to have support for a single player at a table, and for the out engine to calculate outs at each phase of the game post flop. There are a few things in here that aren't necesary for that, but I thought it'd be nice to have them so expansion is easier down the line.
 
@@ -7,9 +7,11 @@ For the first part of this project, I want to have support for a single player a
 
 Classes:
 
+!!!!!!!!!!DONE!!!!!!!!!!!!
 Card:
 This one doesn't really need anything.
 
+!!!!!!!!!!DONE!!!!!!!!!!!!
 Deck:
 Hard code in all of the cards for an unshuffled deck
 Shuffle Algorithm
@@ -37,6 +39,7 @@ Out Algorithm
 
 Algorithms:
 
+!!!!!!!!!!DONE!!!!!!!!!!!!
 Shuffle Algorithm:
 	Somehow we need to get a pseudo random ordering of cards. My thought is this:
 	1. Set counter = 0
