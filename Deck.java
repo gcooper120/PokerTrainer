@@ -78,41 +78,4 @@ public class Deck
 			current.printCard();
 		}
 	}
-
-	public static void main(String[] args)
-	{
-		System.out.println("TESTING");
-
-		Deck myDeck = new Deck();
-		System.out.println("==================================");
-		System.out.println("==================================");
-		System.out.println("==================================");
-		System.out.println("UNSHUFFLED");
-		myDeck.printDeck();
-		System.out.println("==================================");
-		System.out.println("==================================");
-		System.out.println("==================================");
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		myDeck.shuffle();
-		System.out.println("SHUFFLED");
-		myDeck.printDeck();
-	}
 }
