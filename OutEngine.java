@@ -17,4 +17,32 @@ public abstract class OutEngine
 
 	}
 
+	private static void canSF(Card[] set, int wilds)
+	{
+
+	}
+	private static void canQuad(Card[] set, int wilds)
+	{
+
+	}
+	private static void canFH(Card[] set, int wilds)
+	{
+
+	}
+	private static void canF(Card[] set, int wilds)
+	{
+
+	}
+	private static void canS(Card[] set, int wilds)
+	{
+
+	}
+	private static void can3(Card[] set, int wilds)
+	{
+
+	}
+	private static void can(Card[] set, int wilds)
+	{
+
+	}
 }

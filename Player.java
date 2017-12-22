@@ -8,18 +8,6 @@ public class Player
 {
 	private Card hand[];
 
-	private byte makeFlags[];
-	/*
-	0 -> High Card
-	1 -> Pair
-	2 -> Two Pair
-	3 -> Three of a Kind
-	4 -> Straight
-	5 -> Flush
-	6 -> Full House
-	7 -> Quads
-	8 -> Straight Flush
-	*/
 
 	/**
 	*Constructor. Initializes makeFlags array and creates hand
@@ -28,11 +16,14 @@ public class Player
 	public Player()
 	{
 		hand = new Card[2];
-		makeFlags = new byte[] {1,1,1,1,1,1,1,1,1};
+		hand[0] = null;
+		hand[1] = null;
 	}
 
 	/**
 	* Sets the hand cards. Will be called by the dealer.
+	*@param first First Card given to player
+	*@param second Second Card given to player
 	*@return Nothing.
 	*/
 	public void setHand(Card first, Card second)
@@ -42,12 +33,51 @@ public class Player
 	}
 
 	/**
+	* Gives one card to the player.
+	*@param c Card to be given to the player
+	*@param cNum Card number to be given to the player. (First or second, 1-2)
+	*@return Nothing.
+	*/
+	public void giveCard(Card c, int cNum)
+	{
+		try
+		{
+			hand[cNum] = c;
+		}
+		catch (ArrayIndexOutOfBoundsException x)
+		{
+			System.err.println("Illegal card assignment");
+			x.printStackTrace();
+		}
+	}
+
+	/**
+	* Clear's a player's hand
+	*@return Nothing.
+	*/
+	public void clearHand()
+	{
+		hand[0] = null;
+		hand[1] = null;
+	}
+
+	/**
 	* Returns the hand, needed to determine winner and calculate odds
 	* @return hand Returns the array representing the hand.
 	*/
 	 public Card[] getHand()
 	 {
 	 	return hand;
+	 }
+
+	 /**
+	 *Prints out the player's hand
+	 *@return Nothing.
+	 */
+	 public void printHand()
+	 {
+	 	hand[0].printCard();
+	 	hand[1].printCard();
 	 }
 
 }

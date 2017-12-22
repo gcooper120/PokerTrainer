@@ -65,11 +65,11 @@ public class Card
 
 		if (number == 1)
 		{
-			System.out.printf("%2c  %3c\n", 'A', suitChar);
+			System.out.printf("%2c%c\n", 'A', suitChar);
 		}
 		else
 		{
-			System.out.printf("%2d  %3c\n", number, suitChar);
+			System.out.printf("%2d%c\n", number, suitChar);
 		}
 	}
 }

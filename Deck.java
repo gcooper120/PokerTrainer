@@ -9,7 +9,7 @@ public class Deck
 	private Card fullDeck[];
 
 	//Flag set to 0 when deck is unshuffled, set to 1 after shuffle.
-	private byte ready;
+	private boolean ready;
 
 	//Stack for the current deck. Using a stack because pop will make dealing easy.
 	private Stack<Card> currentDeck;
@@ -32,7 +32,7 @@ public class Deck
 			currentDeck.push(fullDeck[i]);
 		}
 
-		ready = 0;
+		ready = false;
 	}
 
 
@@ -40,17 +40,18 @@ public class Deck
 	*Shuffles a deck object and returns a stack representing the deck.
 	*@return Nothing.
 	*/
-	private void shuffle()
+	public void shuffle()
 	{
 		int randomVal;
 		int numLeft = fullDeck.length;
+		currentDeck.clear();
 		for (int i = 0; i < 52; i++, numLeft--)
 		{
 			randomVal = (int)Math.floor(Math.random() * (52-i));
 			currentDeck.push(fullDeck[randomVal]);
 			swapCards(randomVal, numLeft-1);
 		}
-		ready = 1;
+		ready = true;
 	}
 
 	/**
@@ -59,7 +60,7 @@ public class Deck
 	*@parma int Index of the second card
 	*@return Nothing.
 	*/
-	private void swapCards(int first, int second)
+	public void swapCards(int first, int second)
 	{
 		Card temp = fullDeck[second];
 		fullDeck[second] = fullDeck[first];
@@ -70,12 +71,39 @@ public class Deck
 	*Prints the contents of a deck
 	*@return Nothing.
 	*/
-	private void printDeck()
+	public void printDeck()
 	{
 		for (int i = 0; i < 52; i++)
 		{
 			Card current = currentDeck.pop();
 			current.printCard();
 		}
+	}
+
+	/**
+	*Checks if deck is ready for new round
+	*@return ready Boolean indicating whether deck is ready for a new round
+	*/
+	public boolean isReady()
+	{
+		return ready;
+	}
+
+	/**
+	*Updates the ready variable to false so that a new hand can't be dealt
+	*@return Nothing.
+	*/
+	public void unReady()
+	{
+		ready = false;
+	}
+
+	/**
+	*Returns the top card from the deck
+	*@return Card Top of the stack representing the deck
+	*/
+	public Card getTopCard()
+	{
+		return currentDeck.pop();
 	}
 }
