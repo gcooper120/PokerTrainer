@@ -6,8 +6,8 @@ import java.util.*;
 	*/
 public class Card
 {
-	int number;
-	int suit;
+	private int number;
+	private int suit;
 
 	/**
 	* Constructor for a card object.
@@ -28,7 +28,25 @@ public class Card
 		}
 	}
 
-	protected void printCard()
+	/**
+	*Gets the number value
+	*@return number The number associated with the card (1-13)
+	*/
+	public int getNumber()
+	{
+		return number;
+	}
+
+	/**
+	*Gets the suit value
+	*@return suit The suit associated with the card (1-4)
+	*/
+	public int getSuit()
+	{
+		return suit;
+	}
+
+	public void printCard()
 	{
 		char suitChar;
 		switch (suit)
